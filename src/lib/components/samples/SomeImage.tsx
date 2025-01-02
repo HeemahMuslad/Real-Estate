@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Flex, useColorMode } from '@chakra-ui/react';
+import { Flex, useColorMode } from "@chakra-ui/react";
 
-import HelperImage from './HelperImage';
+import HelperImage from "./HelperImage";
 
 const SomeImage = () => {
   const { colorMode } = useColorMode();
