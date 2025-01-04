@@ -4,10 +4,16 @@
     "plugin:react/jsx-runtime",
     "plugin:@next/next/recommended"
   ],
-
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["@", "./src"]],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "rules": {
-    
     "@typescript-eslint/lines-between-class-members": "off",
-    "@typescript-eslint/no-throw-literal":"off",
+    "@typescript-eslint/no-throw-literal": "off"
   }
 }
