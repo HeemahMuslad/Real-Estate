@@ -2,7 +2,15 @@ import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react';
 
 const SideImage = () => {
   return (
-    <Box h="100%" bg="brand.50" w="45%" pt="20px" pl="50px" pb="50px" color="black">
+    <Box
+      h="100%"
+      bg="brand.50"
+      w="45%"
+      pt="20px"
+      pl="50px"
+      pb="50px"
+      color="black"
+    >
       <Stack>
         <Text color="blue" fontWeight="bold" mb="50px">
           Sewo
@@ -18,9 +26,7 @@ const SideImage = () => {
             objectFit="cover"
           />
         </Box>
-        <Heading size="2xl" >
-          Find your sweet home
-        </Heading>
+        <Heading size="2xl">Find your sweet home</Heading>
         <Text color="brand.400">
           Schedule visit in just a few clicks
           <br /> visit in just a few clicks

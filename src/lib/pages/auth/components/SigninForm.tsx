@@ -1,9 +1,5 @@
 import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react';
 
-// import { PasswordInput,  PasswordStrengthMeter,
-// } from '@/components/ui/password-input';
-
-// import { PasswordInput } from './components/ui/password-input';
 
 import { InputElement } from './FormInputs';
 
@@ -16,7 +12,7 @@ const SigninForm = () => {
       pt="20px"
       pr="50px"
       pb="50px"
-      color="black"
+      // color="black"
     >
       <Stack  w="70%" mx="auto">
         <Text>Login</Text>
@@ -27,7 +23,6 @@ const SigninForm = () => {
         <Box as="form"> 
           <InputElement label="Your Email" placeholder="" />
           <InputElement label="Your Email" placeholder="" />
-          {/* <PasswordInput /> */}
 
         </Box>
 
