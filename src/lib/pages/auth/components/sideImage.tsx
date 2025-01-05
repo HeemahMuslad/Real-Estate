@@ -9,7 +9,7 @@ const SideImage = () => {
       pt="20px"
       pl="50px"
       pb="50px"
-      color="black"
+      // color="black"
     >
       <Stack>
         <Text color="blue" fontWeight="bold" mb="50px">

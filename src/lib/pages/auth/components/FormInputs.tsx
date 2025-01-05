@@ -1,6 +1,8 @@
-import { FormControl, FormLabel, Input } from '@chakra-ui/react';
+'use client';
 
-interface InputProps {
+import { FormControl, FormLabel, Input, InputProps as ChakraInputProps } from '@chakra-ui/react';
+
+interface InputProps extends ChakraInputProps {
   label: string;
   placeholder: string;
   type?: string;
@@ -13,9 +15,8 @@ export const InputElement = ({
 }: InputProps) => {
   return (
     <FormControl isRequired>
-      <FormLabel>{label}</FormLabel>
+      <FormLabel fontSize="x-small">{label}</FormLabel>
       <Input
-        variant="outline"
         type={type}
         placeholder={placeholder}
         {...rest}
