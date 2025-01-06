@@ -27,6 +27,7 @@
     "@chakra-ui/react": "^2.10.4",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "formik": "^2.4.6",
     "framer-motion": "^11.15.0",
     "locomotive-scroll": "5.0.0-beta.21",
     "next": "^14.2.5",
@@ -34,7 +35,8 @@
     "nextjs-toploader": "^3.7.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
