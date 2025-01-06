@@ -1,17 +1,9 @@
-import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Heading, Image, Stack, Flex, Text } from '@chakra-ui/react';
 
 const SideImage = () => {
   return (
-    <Box
-      h="100%"
-      bg="brand.50"
-      w="45%"
-      pt="20px"
-      pl="50px"
-      pb="50px"
-      // color="black"
-    >
-      <Stack>
+    <Flex bg="brand.50" w="50%" pt="20px" pb="50px" h="100%">
+      <Stack w="70%" mx="auto">
         <Text color="blue" fontWeight="bold" mb="50px">
           Sewo
         </Text>
@@ -32,7 +24,7 @@ const SideImage = () => {
           <br /> visit in just a few clicks
         </Text>
       </Stack>
-    </Box>
+    </Flex>
   );
 };
 

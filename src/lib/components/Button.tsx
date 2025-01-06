@@ -4,9 +4,9 @@ import { Button, ButtonProps as ChakraInputProps } from '@chakra-ui/react';
 interface ButtonProps extends ChakraInputProps {
   label: string;
 }
-export const ButtonElement = ({ label }: ButtonProps) => {
+export const ButtonElement = ({ label, ...rest }: ButtonProps) => {
   return (
-    <Button colorScheme="blue"  rounded=" md"variant="solid">
+    <Button colorScheme="blue" rounded=" md" variant="solid" {...rest}>
       {label}
     </Button>
   );
