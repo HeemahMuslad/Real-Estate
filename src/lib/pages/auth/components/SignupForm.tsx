@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import {
@@ -18,30 +17,31 @@ import { FcGoogle } from 'react-icons/fc';
 import { ImFacebook2 } from 'react-icons/im';
 import * as Yup from 'yup';
 
-const signInSchema = Yup.object().shape({
+const signUpSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email address')
     .required('Email is required'),
+  fullName: Yup.string().required('Full name is required'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters')
     .required('Password is required'),
 });
 
-const SigninForm = () => {
+const SignUpForm = () => {
   const initialValues = {
     email: '',
+    fullName: '',
     password: '',
   };
 
   const handleSubmit = (
-    values: { email: string; password: string },
+    values: { email: string; fullName: string; password: string },
     { resetForm }: { resetForm: () => void }
   ) => {
     console.log('Form submitted:', values);
-  
+
     resetForm();
   };
-  
 
   return (
     <Flex
@@ -54,26 +54,43 @@ const SigninForm = () => {
       <Box w="70%" mx="auto">
         <Box textAlign="right">
           <Text as="a" href="#" fontSize="xs">
-            Login
+            Register
           </Text>
         </Box>
 
         <Stack my="7">
           <Heading size="xl" fontWeight="bold">
-            Welcome Back to Sewo!
+            Create your Free Account{' '}
           </Heading>
           <Text color="brand.600" fontSize="x-small" mb="15px">
-            Sign in to your account
+            Submit ypur data to register{' '}
           </Text>
 
           <Formik
             initialValues={initialValues}
-            validationSchema={signInSchema}
+            validationSchema={signUpSchema}
             onSubmit={handleSubmit}
           >
             {({ errors, touched, isSubmitting }) => (
               <Form>
                 <Stack>
+                  <Box>
+                    <Field name="fullName">
+                      {({ field }: any) => (
+                        <InputElement
+                          {...field}
+                          label="Full Name"
+                          placeholder="Enter your Full name"
+                          isInvalid={touched.fullName && !!errors.fullName}
+                        />
+                      )}
+                    </Field>
+                    {errors.fullName && touched.fullName && (
+                      <Box color="red.500" fontSize="xs">
+                        {errors.fullName}
+                      </Box>
+                    )}
+                  </Box>
                   <Box>
                     <Field name="email">
                       {({ field }: any) => (
@@ -110,58 +127,31 @@ const SigninForm = () => {
                     )}
                   </Box>
 
-                  <Flex
-                    alignItems="center"
-                    justifyContent="space-between"
-                    mb="6"
-                  >
-                    <Checkbox fontSize="x-small">Remember Me</Checkbox>
-                    <Text as="a" href="#" color="brand.400" fontSize="x-small">
-                      Forgot Password?
+                  <Flex fontSize="x-small" gap="0.5" mb="6">
+                    <Checkbox> </Checkbox> I agree to Sewo
+                    <Text as="a" href="#" color="blue">
+                      Security
+                    </Text>
+                    and
+                    <Text as="a" href="#" color="blue">
+                      Privacy Policy
                     </Text>
                   </Flex>
 
                   <ButtonElement
                     type="submit"
-                    label="Login"
+                    label="Get Started"
                     isLoading={isSubmitting}
                   />
                 </Stack>
               </Form>
             )}
           </Formik>
-          <Box display="flex" alignItems="center" width="100%">
-            <Divider flex="1" border="1" />
-            <Text px="4" whiteSpace="nowrap">
-              Instant Login
-            </Text>
-            <Divider flex="1" border="1" />
-          </Box>
 
-          <Flex
-            alignItems={{ base: 'center', xl: 'flex-start' }}
-            flexDirection={{ base: 'column', xl: 'row' }}
-            gap={4}
-            w="100%"
-            justifyContent={{ base: 'center', lg: 'space-between' }}
-            mt="15px"
-          >
-            <ButtonIcon
-              href="#"
-              label="Continue with Google"
-              icon={<FcGoogle />}
-            />
-            <ButtonIcon
-              label="Continue with Facebook"
-              icon={<ImFacebook2 />}
-              href="#"
-            />
-          </Flex>
-
-          <Text textAlign="center" mt="50px">
-            Don't have an account?{' '}
+          <Text textAlign="center" mt="50px" color="brand.600" fontSize="sm">
+            I have an account?{' '}
             <Text as="a" color="blue" href="#">
-              Register
+              Login
             </Text>
           </Text>
         </Stack>
@@ -170,4 +160,4 @@ const SigninForm = () => {
   );
 };
 
-export default SigninForm;
+export default SignUpForm;

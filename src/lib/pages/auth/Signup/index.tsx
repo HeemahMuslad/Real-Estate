@@ -1,8 +1,8 @@
-"use client"
+'use client';
 import { Flex, useMediaQuery } from '@chakra-ui/react';
 
-import SideImage from '../components/SideImage';
-import SigninForm from '../components/SigninForm';
+import SideImage from '../components/SignUpPageSideImage';
+import SignUpForm from '../components/SignupForm';
 
 const index = () => {
   const [isLargerThan700] = useMediaQuery('(min-width: 700px)');
@@ -10,7 +10,7 @@ const index = () => {
   return (
     <Flex height="100vh" width="100%" align="center">
       {isLargerThan700 && <SideImage />}
-      <SigninForm />
+      <SignUpForm />
     </Flex>
   );
 };

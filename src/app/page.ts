@@ -1,3 +1,3 @@
-import Home from '~/lib/pages/home';
+import Signin from '~/lib/pages/auth/Signin';
 
-export default Home;
+export default Signin;

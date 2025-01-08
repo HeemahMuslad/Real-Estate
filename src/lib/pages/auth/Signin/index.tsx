@@ -1,7 +1,7 @@
-"use client"
+'use client';
 import { Flex, useMediaQuery } from '@chakra-ui/react';
 
-import SideImage from '../components/SideImage';
+import SideImage from '../components/SignInPageSideImage';
 import SigninForm from '../components/SigninForm';
 
 const index = () => {
