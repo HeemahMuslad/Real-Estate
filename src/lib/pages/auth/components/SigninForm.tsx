@@ -52,11 +52,20 @@ const SigninForm = () => {
       h="100%"
     >
       <Box w="70%" mx="auto">
-        <Box textAlign="right">
-          <Text as="a" href="#" fontSize="xs">
-            Login
-          </Text>
-        </Box>
+        <Flex justifyContent={{ base: 'space-between', md: 'end' }}>
+                  <Text
+                    color="blue"
+                    fontWeight="bold"
+                    mb="50px"
+                    display={{ base: 'block', md: 'none' }}
+                    justifyContent=""
+                  >
+                    Sewo
+                  </Text>
+                  <Text as="a" href="#" fontSize="xs">
+                    Register
+                  </Text>
+                </Flex>
 
         <Stack my="7">
           <Heading size="xl" fontWeight="bold">

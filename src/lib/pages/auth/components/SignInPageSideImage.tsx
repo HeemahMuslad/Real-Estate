@@ -4,7 +4,7 @@ const SideImage = () => {
   return (
     <Flex bg="brand.50" w="50%" pt="20px" pb="50px" h="100%">
       <Stack w="70%" mx="auto">
-        <Text color="blue" fontWeight="bold" mb="50px">
+        <Text color="blue" fontWeight="bold" mb="50px" >
           Sewo
         </Text>
         <Box>

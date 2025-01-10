@@ -12,9 +12,7 @@ import {
 import { InputElement } from './FormInputs';
 import { PasswordInput } from './PasswordInput';
 import { ButtonElement } from '~/lib/components/Button';
-import { ButtonIcon } from '~/lib/components/ButtonIcon';
-import { FcGoogle } from 'react-icons/fc';
-import { ImFacebook2 } from 'react-icons/im';
+
 import * as Yup from 'yup';
 
 const signUpSchema = Yup.object().shape({
@@ -52,18 +50,27 @@ const SignUpForm = () => {
       h="100%"
     >
       <Box w="70%" mx="auto">
-        <Box textAlign="right">
+        <Flex justifyContent={{ base: 'space-between', md: 'end' }}>
+          <Text
+            color="blue"
+            fontWeight="bold"
+            mb="50px"
+            display={{ base: 'block', md: 'none' }}
+            justifyContent=""
+          >
+            Sewo
+          </Text>
           <Text as="a" href="#" fontSize="xs">
             Register
           </Text>
-        </Box>
+        </Flex>
 
         <Stack my="7">
           <Heading size="xl" fontWeight="bold">
             Create your Free Account{' '}
           </Heading>
           <Text color="brand.600" fontSize="x-small" mb="15px">
-            Submit ypur data to register{' '}
+            Submit your data to register{' '}
           </Text>
 
           <Formik
