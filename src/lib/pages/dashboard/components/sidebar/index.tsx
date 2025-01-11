@@ -93,7 +93,7 @@ const Sidebar = () => {
               style={{ textDecoration: "none" }}
               color="brand.700"
               bgColor="brand.100"
-              rounded="20px"
+              rounded="lg"
               pr="4px"
               mt="2px"
               justifyContent="start"
@@ -107,7 +107,7 @@ const Sidebar = () => {
             >
               {item.icon}
               {/* // className={`${isOpen ? "block" : "hidden"}  */}
-           ={item.id} 
+           {item.id} 
             </ChakraLink>
           ))}
           {/* <Box className="pt-10 mt-10 border-t border-gray-400">
@@ -138,7 +138,7 @@ const Sidebar = () => {
               <FormattedMessage id="notifications" />
             </ChakraLink>
           </Box> */}
-          <Box className="pt-10 mt-10 border-t border-gray-400  ">
+          {/* <Box className="pt-10 mt-10 border-t border-gray-400  ">
             
             <ChakraLink
               as={Link}
@@ -152,7 +152,7 @@ const Sidebar = () => {
               <MdLogout />
              logout
             </ChakraLink>
-          </Box>
+          </Box> */}
         </Box>
       </VStack>
     </VStack>
