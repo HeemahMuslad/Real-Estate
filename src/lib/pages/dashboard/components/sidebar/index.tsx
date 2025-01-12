@@ -1,13 +1,20 @@
-"use client";
-import React from "react";
+'use client';
+import React, { useState } from 'react';
 
-// import { HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon } from '@chakra-ui/icons';
 
-import { Box, Link as ChakraLink, VStack } from "@chakra-ui/react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FaMedal } from "react-icons/fa";
-import { GiCorkscrew } from "react-icons/gi";
+import {
+  Box,
+  Link as ChakraLink,
+  VStack,
+  Flex,
+  Icon,
+  Text,
+} from '@chakra-ui/react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { FaMedal } from 'react-icons/fa';
+import { GiCorkscrew } from 'react-icons/gi';
 import {
   MdDashboard,
   MdLogout,
@@ -16,17 +23,17 @@ import {
   MdPayments,
   MdPerson,
   // MdReceiptLong,
-} from "react-icons/md";
+} from 'react-icons/md';
 
 const Sidebar = () => {
-  // const [isOpen, setIsOpen] = useState(true);
-  // const toggleIsOpen = () => setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState(true);
+  const toggleIsOpen = () => setIsOpen(!isOpen);
   const pathname = usePathname();
 
   const menuItem = [
     {
-      id: "dashboard",
-      path: "/dashboard",
+      id: 'dashboard',
+      path: '/dashboard',
       icon: <MdDashboard />,
     },
     // {
@@ -35,13 +42,13 @@ const Sidebar = () => {
     //   icon: <MdReceiptLong />,
     // },
     {
-      id: "equipments",
-      path: "/dashboard/initialEquipments",
+      id: 'equipments',
+      path: '/dashboard/initialEquipments',
       icon: <GiCorkscrew />,
     },
     {
-      id: "certificates",
-      path: "/dashboard/cetificates",
+      id: 'certificates',
+      path: '/dashboard/cetificates',
       icon: <FaMedal />,
     },
     // {
@@ -50,8 +57,8 @@ const Sidebar = () => {
     //   icon: <FaClipboardList />,
     // },
     {
-      id: "payments",
-      path: "/dashboard/payments",
+      id: 'payments',
+      path: '/dashboard/payments',
       icon: <MdPayments />,
     },
   ];
@@ -62,26 +69,45 @@ const Sidebar = () => {
       position="static"
       left="0"
       top="0"
-      w="200px"
+      //   w="200px"
       h="100vh"
-      // w={isOpen ? "200px" : "65px"}
-      // pl={isOpen ? "6" : "4"}
-      pl="10"
+      w={isOpen ? '200px' : '65px'}
+      pl={isOpen ? '6' : '4'}
+      //   pl="10"
       pt="10px"
       pb="5px"
-    //   bgColor="brand.50"
+      //   bgColor="brand.50"
       alignItems="start"
-      boxShadow='lg'
+      boxShadow="lg"
       transition="width 0.3s"
-//       className="
-//    bg-light flex flex-col items-start pl-10 pt-44   pb-14"
+      //       className="
+      //    bg-light flex flex-col items-start pl-10 pt-44   pb-14"
     >
-      {/* <Box
-        className=" hover:bg-green rounded-lg cursor-pointer items-center justify-center flex p-2 mb-2 hover:text-white"
+      <Flex
+        // className=" hover:bg-green rounded-lg cursor-pointer items-center justify-center flex p-2 mb-2 hover:text-white"
         onClick={toggleIsOpen}
+        alignItems="center"
+        justifyContent="space-between"
+        w="full"
       >
-        <Icon as={HamburgerIcon} aria-label="Toggle Sidebar" />
-      </Box> */}
+        <Text
+          color="blue"
+          fontWeight="bold"
+          display={`${isOpen ? 'block' : 'none'}`}
+        >
+          Sewo
+        </Text>
+        <Icon
+          as={HamburgerIcon}
+          aria-label="Toggle Sidebar"
+          bgColor="brand.100"
+          cursor="pointer"
+          p="5px"
+          fontSize="2rem"
+          rounded="lg"
+          mr="7px"
+        />
+      </Flex>
 
       <VStack align="start" spacing="4">
         <Box>
@@ -90,24 +116,30 @@ const Sidebar = () => {
               as={Link}
               href={item.path}
               key={index}
-              style={{ textDecoration: "none" }}
-              color="brand.700"
-              bgColor="brand.100"
-              rounded="lg"
-              pr="4px"
-              mt="2px"
-              justifyContent="start"
-              alignItems="center"
-              py="3px"
+              style={{ textDecoration: 'none' }}
+              //   justifyContent="start"
+              //   alignItems="center"
               // className={`${isOpen ? "pr-8" : "pr-2  mt-3"}  hover:bg-green hover:text-white  rounded-xl  flex gap-4 justify-start items-center py-2  pl-2 font-semibold`}
               // onClick={toggleIsOpen}
-            //   className={` ${
-            //     pathname === item.path ? "bg-green text-white" : ""
-            //   }  hover:text-black  rounded-xl  flex gap-4 justify-start items-center py-2  pl-2 text-gray-600 font-semibold pr-8`}
+              //   className={`
+              //   }  hover:text-black  rounded-xl  flex gap-4 justify-start items-center py-2  pl-2 text-gray-600 font-semibold pr-8`}
             >
-              {item.icon}
-              {/* // className={`${isOpen ? "block" : "hidden"}  */}
-           {item.id} 
+              <Flex
+                alignItems="center"
+                justifyContent="start"
+                bgColor={`${pathname === item.path ? 'brand.100' : ''}`}
+                rounded="md"
+                px="10px"
+                py="5px"
+                mt="5px"
+                gap="3"
+                color="brand.700"
+                onClick={toggleIsOpen}
+              >
+                <Box>{item.icon}</Box>
+                <Box display={`${isOpen ? 'block' : 'none'}`}> {item.id}</Box>
+              </Flex>
+              {/* // className={  */}
             </ChakraLink>
           ))}
           {/* <Box className="pt-10 mt-10 border-t border-gray-400">
