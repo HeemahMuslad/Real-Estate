@@ -24,6 +24,7 @@ import {
   MdPerson,
   // MdReceiptLong,
 } from 'react-icons/md';
+import Hamburger_Logo from '../components/Hamburger_Logo';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -66,17 +67,20 @@ const Sidebar = () => {
       alignItems="start"
       transition="width 0.3s"
     >
-      <Flex
+      <Hamburger_Logo />
+      {/* <Flex
         // className=" hover:bg-green rounded-lg cursor-pointer items-center justify-center flex p-2 mb-2 hover:text-white"
         onClick={toggleIsOpen}
         alignItems="center"
         justifyContent="space-between"
         w="full"
+        display={{ base: 'none', md: 'block' }}
       >
         <Text
           color="blue"
           fontWeight="bold"
           display={`${isOpen ? 'block' : 'none'}`}
+
         >
           Sewo
         </Text>
@@ -90,7 +94,7 @@ const Sidebar = () => {
           rounded="lg"
           mr="7px"
         />
-      </Flex>
+      </Flex> */}
 
       <VStack alignItems="start" spacing="4">
         <Box>

@@ -17,8 +17,8 @@ import { MdNotifications } from 'react-icons/md';
 
 const Header = () => {
   return (
-    <Flex alignItems="center" justifyContent="space-between">
-      <Flex alignItems="center" className="flex w-[30%] justify-between">
+    <Flex alignItems="center" justifyContent={{ base: 'flex-end', md: "space-between" }}>
+      <Flex alignItems="center" display={{ base: 'none', md: 'block' }}>
         <InputGroup size="lg" width="400px">
           <Input placeholder="Search here" variant="filled" />
           <InputRightElement cursor="pointer">
@@ -33,7 +33,6 @@ const Header = () => {
           icon={<MdNotifications />}
           size="md"
           fontSize="30px"
-          position="relative"
         />
         <Box h="40px" w="40px" border="1px" rounded="full"></Box>
       </Flex>
