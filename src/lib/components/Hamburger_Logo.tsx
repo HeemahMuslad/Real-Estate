@@ -14,13 +14,13 @@ const Hamburger_Logo = () => {
         w="full"
         display={{ base: 'none', md: 'block' }}
       >
-        <Text
+        {/* <Text
           color="blue"
           fontWeight="bold"
           display={`${isOpen ? 'block' : 'none'}`}
         >
           Sewo
-        </Text>
+        </Text> */}
         <Icon
           as={HamburgerIcon}
           aria-label="Toggle Sidebar"
