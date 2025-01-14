@@ -98,11 +98,14 @@
 'use client';
 
 import React from 'react';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex,  useBreakpointValue,
+ } from '@chakra-ui/react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
     <Flex h="100vh" overflow="hidden">
       {/* Sidebar */}
@@ -115,8 +118,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         pt="10px"
         pb="5px"
         boxShadow="lg"
-       
         bgColor="white"
+        zIndex={2}
       >
         <Sidebar />
       </Box>
@@ -130,7 +133,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           bgColor="white"
           p={4}
           w="100%" // Full width of the main section
-          zIndex={2}
+          // zIndex={2}
           boxShadow="md"
           // position="fixed"
           // top="0"
