@@ -119,7 +119,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         pb="5px"
         boxShadow="lg"
         bgColor="white"
-        zIndex={2}
+        zIndex={3}
       >
         <Sidebar />
       </Box>
@@ -133,7 +133,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           bgColor="white"
           p={4}
           w="100%" // Full width of the main section
-          // zIndex={2}
+          zIndex={2}
           boxShadow="md"
           // position="fixed"
           // top="0"
